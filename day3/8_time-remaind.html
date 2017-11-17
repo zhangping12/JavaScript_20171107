@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var dob = '1990-1-1';
+        var years = 80;
+        var birthday = new Date(dob);
+        var deathday = new Date(birthday.setFullYear(birthday.getFullYear() + years));
+        function show() {
+            var today = new Date();
+            var seconds = Math.round((deathday.getTime() - today.getTime()) / 1000);
+            document.getElementById('txt').innerHTML = seconds;
+            setTimeout('show()', 900);
+        }
+    </script>
+</head>
+<body onload="show()">
+Your have <span id="txt"></span> seconds...
+</body>
+</html>

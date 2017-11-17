@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <style>
+        div {
+            width: 300px;
+            margin: auto;
+        }
+        span {
+            width: 100px;
+            height: 100px;
+            background: #ddd;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script>
+    // 2D Array..
+    // int[][] ints = new int[3][3];
+    var array = [
+        [],
+        [],
+        []
+    ];
+    var html = '';
+    for (var i = 0; i < 9; i++) {
+        html += '<span></span>';
+    }
+    document.getElementById('box').innerHTML = html;
+</script>
+</html>

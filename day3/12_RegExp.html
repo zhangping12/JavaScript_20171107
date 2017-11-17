@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+    RegExp
+    Regular Expression
+    正则 表达式
+
+    Email
+    asdf@asdf.com
+    /1@2\.3/
+</pre>
+<script>
+    var pattern = /e/; // new RegExp('e');
+    console.log(pattern.test('hello...'));
+    console.log(pattern.exec('hello...'));
+
+    pattern.compile(/e/i);
+    console.log(pattern.exec('hEllo...'));
+
+    pattern.compile(/e/gi);
+    do {
+        result = pattern.exec("hello, English...");
+        console.log(result);
+    } while (result !== null);
+
+    pattern.compile(/[^a-zA-Z0-9]/g);
+    console.log('789Hello, World! 123'.match(pattern));
+
+    pattern.compile(/(red|blue)/g);
+    console.log('asdbluefread'.match(pattern));
+
+    pattern.compile(/[A-z]/g); // A-Z 65 a-z 97 ascii
+    console.log('Hello,World![]^'.match(pattern));
+
+    pattern.compile(/./g);
+    console.log('Hello, World.'.match(pattern));
+
+    pattern.compile(/\D/g);//非数字部分
+    console.log("123test...".match(pattern));
+
+    pattern.compile(/[\u4E00-\u9FBB]/g)//匹配所有中文
+    console.log('一中文Hello, World1'.match(pattern));
+</script>
+</body>
+</html>
